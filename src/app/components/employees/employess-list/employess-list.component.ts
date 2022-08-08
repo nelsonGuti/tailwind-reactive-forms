@@ -17,13 +17,14 @@ export class EmployessListComponent implements OnInit {
   }
 
   openEmployeeFormDialog() {
-    console.log('openEmployeeFormDialog');
     const dialogRef = this.dialog.open(EmployeeFormComponent, {
       width: '50vw',
-      data: 'hello',
     });
 
     dialogRef.afterClosed().subscribe((formValue) => {
+      if (!formValue) {
+        return;
+      }
       const { employee } = formValue;
       const newEmployee = new Employee(employee);
       this.employees.push(newEmployee);

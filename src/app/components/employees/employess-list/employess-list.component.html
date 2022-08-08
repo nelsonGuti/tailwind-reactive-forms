@@ -1,0 +1,25 @@
+<div class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <p
+        class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+      >
+        Employees
+      </p>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+        Keep all the data of your employees centralized
+      </p>
+      <button
+        (click)="openEmployeeFormDialog()"
+        class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Add new Employee to DB
+      </button>
+    </div>
+  </div>
+</div>
+<div *ngIf="employees.length">
+  <ng-container *ngFor="let employee of employees">
+    <app-employee-card [employee]="employee"></app-employee-card>
+  </ng-container>
+</div>

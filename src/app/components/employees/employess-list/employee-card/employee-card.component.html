@@ -1,0 +1,25 @@
+<mat-card class="m-4">
+  <mat-card-title
+    >{{ employee?.name }}
+    <mat-icon
+      *ngIf="employee?.isActive"
+      aria-hidden="false"
+      aria-label="checked icon"
+      fontIcon="check_circle"
+    ></mat-icon
+  ></mat-card-title>
+  <mat-card-subtitle>{{ employee?.position }}</mat-card-subtitle>
+  <mat-card-content>
+    <p class="flex items-center gap-1">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example email icon"
+        fontIcon="email"
+      ></mat-icon>
+      <span class="flex items-center">{{ employee?.email }}</span>
+    </p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button>Edit employee</button>
+  </mat-card-actions>
+</mat-card>
